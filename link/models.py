@@ -22,7 +22,7 @@ class Link(models.Model):
     link_id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     original_url = models.URLField(max_length=255)
-    short_url = models.URLField(max_length=255)
+    short_url = models.URLField(max_length=255,unique=True)
     date_added = models.DateTimeField(auto_now_add=True)
     visits = models.BigIntegerField(default=0)
     active = models.BooleanField(default=True)
