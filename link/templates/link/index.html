@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tinyme</title>
     <link rel="stylesheet" href="{% static 'link/css/style.css' %}">
     <script src="{%static 'link/js/app.js'%}">  </script>
 </head>
 <body>
-    <p> Welcome to Tinyyou</p>
+    <nav class="navbar">
+        <a class = "navbar-brand" href="{% url 'landing' %}">
+            <img src="{% static 'assets/images/logo_tiny.png'%}" alt="logo">
+        </a>
+
+        <a href="{% url 'home' %}"> Home </a>
+        <a href="{% url 'dashboard' %}"> Dashboard </a>
+        <a href="{% url 'landing' %}"> Landing </a>
+    </nav>
+
+    <div class = "content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
 </body>
 </html>

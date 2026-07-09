@@ -1,18 +1,90 @@
+
+/* color pallete */
 :root{
 
-    --deep-twilight: #03045eff;
-    --french-blue: #023e8aff;
-    --bright-teal-blue: #0077b6ff;
-    --blue-green: #0096c7ff;
-    --turquoise-surf: #00b4d8ff;
-    --sky-aqua: #48cae4ff;
-    --frosted-blue: #90e0efff;
-    --frosted-blue-2: #ade8f4ff;
-    --light-cyan: #caf0f8ff;
+    --black: #000000ff;
+    --graphite: #333333ff;
+    --grey: #71797eff;
+    --space-indigo: #1a2854ff;
+    --dark-coffee: #3c2218ff;
+    --white: #ffffff;
 
 }
 
 
 body {
-    background-color: var(--frosted-blue);
+    background-color: var(--black);
+    color: var(--white);
+
+    font-family: "Poppins",sans-serif;
+}
+
+/* navigation bar */
+.navbar {
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    margin-top: 1%;
+    overflow: hidden;
+    padding: 10px;
+       gap: 10px;
+}
+
+/* underline under navbar */
+.navbar::after {
+    content: "";
+    background: var(--grey);
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* LOGO */
+
+.navbar .navbar-brand {
+    float: left;
+    left: 0;
+}
+.navbar .navbar-brand img {
+    height: 50px;                
+    width: auto;                   
+    display: block;
+    float: left;
+}
+
+/* nav bar buttons */
+.navbar a {
+    display: flex;
+    position: relative;
+    float: right;
+    align-items: center;
+    color: var(--white);
+    font-weight: 500;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-style: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    width: max-content;
+    right: 10%;
+
+
+}
+
+.navbar a::after{
+    content: "";
+    background: var(--space-indigo);
+    height: 4px;
+    width: 0%;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s ease-out ;
+}
+
+.navbar a:hover::after{
+    width: 100%;
 }

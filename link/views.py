@@ -1,5 +1,15 @@
 from django.shortcuts import render
 
 # Create your views here.
-def landing(request):
+def base(request):
     return render(request, "link/index.html")
+
+def dashboard(request):
+    return render(request, "link/pages/dashboard.html")
+
+def home(request):
+    return render(request, "link/pages/home.html")
+
+def landing(request):
+    return render(request, "link/pages/landing.html")
+
