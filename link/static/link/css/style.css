@@ -57,11 +57,11 @@ body::before {
     padding: 10px 40px;
     box-sizing: border-box;
 
-    background: rgba(0, 0, 0, 0.6);  
-    backdrop-filter: blur(5px);      
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 
@@ -202,4 +202,52 @@ body::before {
 
 .card-button:active {
     transform: scale(0.98);
+}
+
+/* page wrapper */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* push footer down */
+.my-container {
+    flex: 1;
+}
+
+/* footer */
+.landing-footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
