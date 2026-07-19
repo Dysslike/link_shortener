@@ -1,4 +1,8 @@
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* color pallete */
 :root{
 
@@ -13,84 +17,189 @@
 
 
 body {
-    background-color: var(--black);
-    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--black),
+        var(--space-indigo),
+        var(--graphite)
+    );
 
+
+    color: var(--white);
     font-family: "Poppins",sans-serif;
+
+    padding-top: 80px;
+
+    min-height: 100vh;
+}
+
+body::before {
+    background: radial-gradient(
+        circle at top right,
+        rgba(26, 40, 84, 0.4),
+        transparent 60%
+    );
 }
 
 /* navigation bar */
 .navbar {
+    display: flex;
     justify-content: space-between;
-    position: relative;
     align-items: center;
-    margin-top: 1%;
-    overflow: hidden;
-    padding: 10px;
-       gap: 10px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 1000;
+
+    padding: 10px 40px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.6);  
+    backdrop-filter: blur(5px);      
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--grey);
 }
 
-/* underline under navbar */
-.navbar::after {
-    content: "";
-    background: var(--grey);
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
 
 /* LOGO */
+.navbar-brand {
+    display: flex;
+    align-items: center;
 
-.navbar .navbar-brand {
-    float: left;
     left: 0;
+    position: relative;
 }
+
 .navbar .navbar-brand img {
-    height: 50px;                
+    height: 40px;                
     width: auto;                   
     display: block;
-    float: left;
 }
 
 /* nav bar buttons */
 .navbar a {
     display: flex;
-    position: relative;
-    float: right;
     align-items: center;
+    position: relative;
+
+    float: right;
     color: var(--white);
     font-weight: 500;
     padding: 15px 40px;
     text-decoration: none;
-    font-style: bold;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 20px;
     width: max-content;
     right: 10%;
 }
 
+/* underline under nav buttons*/
 .navbar a::after{
     content: "";
     background-image: linear-gradient(45deg,var(--space-indigo),var(--grey));
-    height: 4px;
+    height: 1px;
     width: 0%;
-    border-radius: 20px;
     position: absolute;
     bottom: 0;
     left: 0;
     transition: 0.2s ease-out ;
-    z-index: 1;
 }
 
 .navbar a:hover::after{
     width: 100%;
-    
 }
 
 .navbar a:hover {
     /* horizontal | vertical | blur | color */
     text-shadow: 0px 3px 10px#ffffff;
-    transition: 0.2s ease-in
+    transition: 0.1s
+}
+
+/* Container */
+.my-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin-left:auto;
+    margin: auto;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    box-sizing: border-box;
+    min-height: 80vh;
+}
+
+/* Cards */
+.big-card {
+    display: flex;
+    background-color: var(--graphite);
+    border: 1px solid var(--grey);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 620px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.big-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-titletext {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+}
+
+.card-bodytext {
+    color: #d8d8d8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+.card-button {
+    align-self: flex-start;
+
+    background-color: var(--space-indigo);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 12px 24px;
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-button:hover {
+    background-color: var(--dark-coffee);
+    transform: scale(1.05);
+}
+
+.card-button:active {
+    transform: scale(0.98);
 }

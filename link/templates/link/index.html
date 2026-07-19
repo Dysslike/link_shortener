@@ -13,10 +13,11 @@
         <a class = "navbar-brand" href="{% url 'landing' %}">
             <img src="{% static 'assets/images/logo_tiny.png'%}" alt="logo">
         </a>
-
-        <a href="{% url 'home' %}"> Home </a>
-        <a href="{% url 'dashboard' %}"> Dashboard </a>
-        <a href="{% url 'landing' %}"> Landing </a>
+        <div class="Nav-links">
+            <a href="{% url 'home' %}"> Home </a>
+            <a href="{% url 'dashboard' %}"> Dashboard </a>
+        </div>
+        
     </nav>
 
     <div class = "content">
