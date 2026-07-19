@@ -13,3 +13,8 @@ def home(request):
 def landing(request):
     return render(request, "link/pages/landing.html")
 
+def signup(request):
+    return render(request, "link/pages/signup.html")
+
+def login(request):
+    return render(request, "link/pages/login.html")

@@ -142,18 +142,43 @@ body::before {
 /* Cards */
 .big-card {
     display: flex;
-    background-color: var(--graphite);
-    border: 1px solid var(--grey);
-    border-radius: 16px;
-    padding: 24px;
-    max-width: 620px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.05); /* transparent glass */
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(255,255,255,0.03);
+
+    transition: all 0.3s ease;
+}
+
+.big-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(
+        circle at top left,
+        rgba(26, 40, 84, 0.4),
+        transparent 60%
+    );
+    z-index: -1;
 }
 
 .big-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(255,255,255,0.05);
 }
 
 .card-details {
@@ -163,41 +188,46 @@ body::before {
 }
 
 .card-titletext {
-    color: var(--white);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 0;
-    text-align: left;
+    line-height: 1.2;
 }
 
 .card-bodytext {
-    color: #d8d8d8;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
 }
 
 .card-button {
     align-self: flex-start;
 
-    background-color: var(--space-indigo);
+    background: linear-gradient(
+        135deg,
+        var(--space-indigo),
+        var(--dark-coffee)
+    );
+
     color: var(--white);
     border: none;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 12px 24px;
-    
+    border-radius: 12px;
+
+    margin-top: 20px;
+    padding: 14px 28px;
+
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 
     font-size: 1rem;
     font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+
+    transition: all 0.25s ease;
 }
 
 .card-button:hover {
-    background-color: var(--dark-coffee);
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .card-button:active {
@@ -218,36 +248,98 @@ body::before {
 
 /* footer */
 .landing-footer {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding: 25px 40px;
+    margin-top: 40px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     max-width: 1200px;
     margin: auto;
+
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .footer-content p {
-    color: var(--grey);
+    color: rgba(255,255,255,0.6);
     font-size: 14px;
 }
 
 .footer-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .footer-links a {
-    color: var(--white);
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
     font-size: 14px;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    width: 0%;
+    height: 1px;
+
+    background: linear-gradient(
+        45deg,
+        var(--space-indigo),
+        var(--grey)
+    );
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    color: var(--white);
+}
+
+.footer-brand h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer-brand p {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-bottom p span {
+    color: var(--white);
+    font-weight: 500;
 }
