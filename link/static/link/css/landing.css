@@ -1,0 +1,81 @@
+/* landing */
+.link-showcase {
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.long-link {
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed rgba(255,255,255,0.15);
+
+    padding: 12px 16px; 
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    line-height: 1.4;   
+
+    color: rgba(255,255,255,0.7);
+
+    max-width: 360px;
+
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    color: var(--grey);
+}
+
+.short-link {
+    background: rgba(26, 36, 68, 0.25); /* soft indigo tint */
+
+    border: 1px solid rgba(17, 25, 51, 0.6);
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    font-weight: 600;
+    color: var(--white);
+
+    letter-spacing: 0.5px;
+
+    box-shadow: 
+        0 0 12px rgba(26, 40, 84, 0.4);
+
+    transition: all 0.25s ease;
+}
+
+.short-link {
+    transition: all 0.3s ease;
+}
+
+.short-link:hover {
+    box-shadow: 
+        0 0 18px rgba(26, 40, 84, 0.7);
+
+    transform: translateY(-2px);
+}
+
+.label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.domain {
+    color: rgba(255,255,255,0.5); 
+}
+
+.slug {
+    color: var(--white);
+    font-weight: 700;
+}

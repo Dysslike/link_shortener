@@ -1,0 +1,97 @@
+/* Cards */
+.big-card {
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.05); /* transparent glass */
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(255,255,255,0.03);
+
+    transition: all 0.3s ease;
+}
+
+.big-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(
+        circle at top left,
+        rgba(26, 40, 84, 0.4),
+        transparent 60%
+    );
+    z-index: -1;
+}
+
+.big-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(255,255,255,0.05);
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-titletext {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    margin: 0; /* 🔥 important */
+}
+
+.card-bodytext {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+
+    margin: 0; /* 🔥 important */
+}
+.card-button {
+    align-self: flex-start;
+
+    background: linear-gradient(
+        135deg,
+        var(--space-indigo),
+        var(--dark-coffee)
+    );
+
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+
+    margin-top: 20px;
+    padding: 14px 28px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+
+    transition: all 0.25s ease;
+}
+
+.card-button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.card-button:active {
+    transform: scale(0.98);
+}

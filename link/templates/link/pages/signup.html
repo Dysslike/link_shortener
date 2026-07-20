@@ -1,5 +1,10 @@
 {% extends "link/index.html" %}
 
+{% block title %} Create an Account {% endblock %}
+
 {% block content %}
-<h1> signup </h1>
+    <form method="POST" class="form-group">
+        {{form}}
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
 {% endblock %}
