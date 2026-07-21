@@ -1,0 +1,9 @@
+{% extends "link/index.html" %}
+
+{% block content %}
+<h1> Account </h1>
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+{% endblock %}
