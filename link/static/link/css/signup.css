@@ -1,0 +1,69 @@
+/* =========================
+   SIGNUP CONTAINER
+========================= */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Optional: tighten spacing inside card */
+.signup-container .big-card {
+    margin-top: -20px; /* slight lift toward center */
+}
+
+
+/* =========================
+   BUTTON (MATCHES THEME)
+========================= */
+
+.btn-success {
+    margin-top: 10px;
+    padding: 10px 14px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: linear-gradient(
+        45deg,
+        var(--space-indigo),
+        var(--graphite)
+    );
+
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+/* Hover (same glow style as landing links) */
+.btn-success:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(26, 40, 84, 0.6);
+
+    text-shadow: 0px 2px 8px #ffffff;
+}
+
+/* Active click feel */
+.btn-success:active {
+    transform: scale(0.98);
+}
+
+/* Mobile tweak */
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 10px;
+    }
+}

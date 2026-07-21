@@ -1,10 +1,26 @@
 {% extends "link/index.html" %}
 
 {% block title %} Create an Account {% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'link/css/signup.css'%}">
+{% endblock %}
 
 {% block content %}
-    <form method="POST" class="form-group">
-        {{form}}
-        <button type="submit" class="btn btn-success">Register</button>
-    </form>
+    <div class="page-wrapper">
+        <div class="signup-container">
+            <div class="big-card">
+                <h2>Create Account</h2>
+                <form method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <p>Already have an account? login <a href="{% url 'login'%}"> here </a></p>
+                    <button type="submit" class="btn btn-success">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}
