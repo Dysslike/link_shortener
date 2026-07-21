@@ -26,7 +26,7 @@ def signup(request):
         form = signupForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect("link/index.html")
+        return redirect("home")
     else:
         form = signupForm()
     return render(request, "link/pages/signup.html", {"form":form})
@@ -42,7 +42,6 @@ def login(request):
         form = AuthenticationForm()
 
     return render(request, "registration/login.html", {"form": form})
-
 
 def logout_view(request):
     logout(request)
