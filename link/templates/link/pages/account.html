@@ -1,9 +1,26 @@
 {% extends "link/index.html" %}
 
+{% load static%}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'link/css/account.css'%}">
+{% endblock %}
+
 {% block content %}
-<h1> Account </h1>
-    <form action="{% url 'logout' %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
+<div class="page-wrapper">
+    <div class="hero-container">
+        <div class="big-card">
+            <h1> Account </h1>
+            {{ user.username }}
+            {{ user.first_name }}
+            {{ user.last_name }}
+            {{ user.email }}
+            <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success" >Logout</button>
+            </form>
+        </div>
+    </div> 
+</div>
+
 {% endblock %}

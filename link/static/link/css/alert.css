@@ -1,0 +1,96 @@
+/* container */
+.messages {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 2000;
+}
+
+/* base alert */
+.alert {
+    min-width: 260px;
+    max-width: 320px;
+
+    padding: 14px 18px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.4),
+        0 0 10px rgba(26, 40, 84, 0.3);
+
+    position: relative;
+    overflow: hidden;
+
+    animation: slideIn 0.4s ease-out;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* glowing left accent */
+.alert::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+
+    border-radius: 4px;
+}
+
+/* message types (use your palette) */
+.alert.success::before {
+    background: linear-gradient(180deg, #276fa6, #261e49);
+}
+
+.alert.error::before {
+    background: linear-gradient(180deg, #dc3545, #ff6b6b);
+}
+
+.alert.warning::before {
+    background: linear-gradient(180deg, #ffc107, #ffe066);
+}
+
+.alert.info::before {
+    background: linear-gradient(180deg, var(--space-indigo), var(--grey));
+}
+
+/* subtle hover like navbar */
+.alert:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5),
+        0 0 15px rgba(26, 40, 84, 0.5);
+}
+
+/* animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(120%); /* fully off-screen right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+}
